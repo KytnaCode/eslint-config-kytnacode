@@ -15,7 +15,7 @@ const unicornRules: ESLint.ConfigData["rules"] = {
 
 export default defineConfig([
   {
-    files: ["**/*.{ts,tsx,mtsx}"],
+    files: ["**/*.ts"],
     extends: [unicorn.configs.recommended, tseslint.configs.recommended],
     plugins: {
       unicorn,
@@ -27,7 +27,7 @@ export default defineConfig([
     rules: unicornRules,
   },
   {
-    files: ["**/*.{js,jsx,cjs,mjs,mjsx}"],
+    files: ["**/*.{js,cjs,mjs}"],
     extends: [unicorn.configs.recommended],
     plugins: {
       unicorn,
