@@ -4,6 +4,7 @@ import js from "@eslint/js";
 import unicorn from "eslint-plugin-unicorn";
 import globals from "globals";
 import type { ESLint } from "eslint";
+import tseslint from "typescript-eslint";
 
 const unicornRules: ESLint.ConfigData["rules"] = {
   "unicorn/custom-error-definition": "error",
@@ -14,7 +15,7 @@ const unicornRules: ESLint.ConfigData["rules"] = {
 export default defineConfig([
   {
     files: ["**/*.{ts,tsx,mtsx}"],
-    extends: [unicorn.configs.recommended],
+    extends: [unicorn.configs.recommended, tseslint.configs.recommended],
     plugins: {
       unicorn,
     },
