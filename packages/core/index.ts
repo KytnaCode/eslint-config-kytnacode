@@ -1,9 +1,10 @@
-import typescriptEslintParser from "@typescript-eslint/parser";
-import { defineConfig } from "eslint/config";
 import js from "@eslint/js";
+import typescriptEslintParser from "@typescript-eslint/parser";
+import type { ESLint } from "eslint";
+import { defineConfig } from "eslint/config";
+import simpleImportSort from "eslint-plugin-simple-import-sort";
 import unicorn from "eslint-plugin-unicorn";
 import globals from "globals";
-import type { ESLint } from "eslint";
 import tseslint from "typescript-eslint";
 
 const unicornRules: ESLint.ConfigData["rules"] = {
@@ -39,7 +40,9 @@ export default defineConfig([
   {
     extends: [js.configs.recommended],
     files: ["**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}"],
-
+    plugins: {
+      "simple-import-sort": simpleImportSort,
+    },
     languageOptions: {
       globals: globals.builtin,
     },
@@ -79,6 +82,9 @@ export default defineConfig([
       "prefer-const": "error",
       "prefer-regex-literals": "error",
       yoda: "error",
+
+      "simple-import-sort/imports": "error",
+      "simple-import-sort/exports": "error",
     },
   },
 ]);
