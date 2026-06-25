@@ -1,5 +1,6 @@
 {
   "name": "eslint-config-kytnacode-core",
+  "version": "0.3.0",
   "module": "index.ts",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
