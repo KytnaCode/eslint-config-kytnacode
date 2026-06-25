@@ -1,0 +1,11 @@
+{
+  "name": "eslint-config-kytnacode",
+  "version": "0.1.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "eslint": "^10.5.0",
+    "eslint-config-kytnacode-core": "workspace:*"
+  }
+}
