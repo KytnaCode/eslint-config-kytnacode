@@ -27,7 +27,7 @@ export default defineConfig([
       },
     },
     rules: {
-      "react/bolean-prop-naming": "error",
+      "react/boolean-prop-naming": "error",
       "react/iframe-missing-sandbox": "error",
     },
   },
