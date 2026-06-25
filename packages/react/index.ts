@@ -4,10 +4,12 @@ import reactHooks from "eslint-plugin-react-hooks";
 import globals from "globals";
 
 export default defineConfig([
-  react.configs.flat["jsx-runtime"]!,
-  reactHooks.configs.flat.recommended,
   {
     files: ["**/*.{jsx,mjsx,tsx,mtsx}"],
+    extends: [
+      react.configs.flat["jsx-runtime"]!,
+      reactHooks.configs.flat.recommended,
+    ],
     languageOptions: {
       globals: globals.browser,
       parserOptions: {
