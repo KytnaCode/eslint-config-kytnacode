@@ -1,9 +1,11 @@
 import { defineConfig } from "eslint/config";
 import react from "eslint-plugin-react";
+import reactHooks from "eslint-plugin-react-hooks";
 import globals from "globals";
 
 export default defineConfig([
   react.configs.flat["jsx-runtime"]!,
+  reactHooks.configs.flat.recommended,
   {
     files: ["**/*.{jsx,mjsx,tsx,mtsx}"],
     languageOptions: {
