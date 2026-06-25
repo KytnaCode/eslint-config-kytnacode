@@ -15,6 +15,9 @@
     "typescript": "^5"
   },
   "dependencies": {
-    "@eslint/js": "^10.0.1"
+    "@eslint/js": "^10.0.1",
+    "@typescript-eslint/parser": "^8.62.0",
+    "eslint-plugin-unicorn": "^69.0.0",
+    "globals": "^17.7.0"
   }
 }
