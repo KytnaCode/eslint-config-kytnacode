@@ -11,6 +11,7 @@ const unicornRules: ESLint.ConfigData["rules"] = {
   "unicorn/custom-error-definition": "error",
   "unicorn/error-message": "error",
   "unicorn/no-unsafe-dom-html": "error",
+  "unicorn/logical-assignment-operators": "off",
 };
 
 export default defineConfig([
