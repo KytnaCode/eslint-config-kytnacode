@@ -13,6 +13,7 @@
       default = pkgs.mkShellNoCC {
         buildInputs = with pkgs; [
           bun
+          nodejs_24
         ];
       };
     });
