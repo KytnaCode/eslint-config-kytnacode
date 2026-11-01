@@ -12,6 +12,15 @@ const unicornRules: ESLint.ConfigData["rules"] = {
   "unicorn/error-message": "error",
   "unicorn/no-unsafe-dom-html": "error",
   "unicorn/logical-assignment-operators": "off",
+  "unicorn/filename-case": [
+    "warn",
+    {
+      cases: {
+        kebabCase: true,
+        pascalCase: true,
+      },
+    },
+  ],
 };
 
 export default defineConfig([
