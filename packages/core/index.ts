@@ -70,7 +70,6 @@ export default defineConfig([
       eqeqeq: "error",
       "func-name-matching": "error",
       "func-names": "error",
-      "func-style": "error",
       "no-eval": "error",
       "no-extend-native": "error",
       "no-implicit-coercion": "error",
