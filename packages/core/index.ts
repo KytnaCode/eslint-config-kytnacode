@@ -4,6 +4,7 @@ import type { ESLint } from "eslint";
 import { defineConfig } from "eslint/config";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
 import unicorn from "eslint-plugin-unicorn";
+import unusedImports from "eslint-plugin-unused-imports";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
@@ -27,32 +28,22 @@ const unicornRules: ESLint.ConfigData["rules"] = {
 export default defineConfig([
   {
     files: ["**/*.{ts,tsx}"],
-    extends: [unicorn.configs.recommended, tseslint.configs.recommended],
-    plugins: {
-      unicorn,
-    },
+    extends: [tseslint.configs.recommended],
     languageOptions: {
       globals: globals.builtin,
       parser: typescriptEslintParser,
     },
-    rules: unicornRules,
+    rules: {
+      "@typescript-eslint/no-unused-vars": "off",
+    },
   },
   {
-    files: ["**/*.{js,cjs,mjs}"],
-    extends: [unicorn.configs.recommended],
-    plugins: {
-      unicorn,
-    },
-    languageOptions: {
-      globals: globals.builtin,
-    },
-    rules: unicornRules,
-  },
-  {
-    extends: [js.configs.recommended],
+    extends: [js.configs.recommended, unicorn.configs.recommended],
     files: ["**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}"],
     plugins: {
       "simple-import-sort": simpleImportSort,
+      unicorn,
+      "unused-imports": unusedImports,
     },
     languageOptions: {
       globals: globals.builtin,
@@ -94,6 +85,19 @@ export default defineConfig([
 
       "simple-import-sort/imports": "error",
       "simple-import-sort/exports": "error",
+
+      "unused-imports/no-unused-imports": "error",
+      "unused-imports/no-unused-vars": [
+        "warn",
+        {
+          vars: "all",
+          varsIgnorePattern: "^_",
+          args: "after-used",
+          argsIgnorePattern: "^_",
+        },
+      ],
+
+      ...unicornRules,
     },
   },
 ]);
