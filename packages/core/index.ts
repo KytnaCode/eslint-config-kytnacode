@@ -78,7 +78,6 @@ export default defineConfig([
       "no-implied-eval": "error",
       "no-invalid-this": "error",
       "no-labels": "error",
-      "no-magic-numbers": "warn",
       "no-nested-ternary": "warn",
       "no-throw-literal": "error",
       "no-undefined": "error",
